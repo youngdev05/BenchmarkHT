@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>OrmBenchmark.Benchmarks.CrudBenchmarks-20260316-180957</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.13.12, Windows 11 (10.0.22631.6199/23H2/2023Update/SunValley3)
+AMD Ryzen 5 3550H with Radeon Vega Mobile Gfx, 1 CPU, 8 logical and 4 physical cores
+.NET SDK 8.0.204
+  [Host]     : .NET 8.0.13 (8.0.1325.6609), X64 RyuJIT AVX2
+  Job-KKTTMB : .NET 8.0.13 (8.0.1325.6609), X64 RyuJIT AVX2
+</code></pre>
+<pre><code>InvocationCount=1  UnrollFactor=1  
+</code></pre>
+
+<table>
+<thead><tr><th>Method    </th><th>Mean </th><th>Error</th><th>StdDev</th><th>Median</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>&#39;EF Core Read&#39;</td><td>53.48 &mu;s</td><td>7.238 &mu;s</td><td>21.23 &mu;s</td><td>45.80 &mu;s</td><td>920 B</td>
+</tr><tr><td>&#39;ADO.NET Read&#39;</td><td>253.02 &mu;s</td><td>23.626 &mu;s</td><td>68.54 &mu;s</td><td>232.05 &mu;s</td><td>2968 B</td>
+</tr><tr><td>&#39;Dapper Read&#39;</td><td>299.12 &mu;s</td><td>28.991 &mu;s</td><td>83.65 &mu;s</td><td>292.60 &mu;s</td><td>2864 B</td>
+</tr><tr><td>&#39;ADO.NET Update&#39;</td><td>1,282.69 &mu;s</td><td>68.764 &mu;s</td><td>193.95 &mu;s</td><td>1,259.90 &mu;s</td><td>2376 B</td>
+</tr><tr><td>&#39;ADO.NET Delete&#39;</td><td>1,334.50 &mu;s</td><td>92.070 &mu;s</td><td>271.47 &mu;s</td><td>1,251.70 &mu;s</td><td>1752 B</td>
+</tr><tr><td>&#39;ADO.NET Create&#39;</td><td>1,372.68 &mu;s</td><td>73.370 &mu;s</td><td>210.51 &mu;s</td><td>1,346.60 &mu;s</td><td>2784 B</td>
+</tr><tr><td>&#39;Dapper Delete&#39;</td><td>1,386.68 &mu;s</td><td>88.804 &mu;s</td><td>261.84 &mu;s</td><td>1,327.45 &mu;s</td><td>1904 B</td>
+</tr><tr><td>&#39;Dapper Update&#39;</td><td>1,386.71 &mu;s</td><td>89.079 &mu;s</td><td>257.01 &mu;s</td><td>1,331.40 &mu;s</td><td>3368 B</td>
+</tr><tr><td>&#39;Dapper Create&#39;</td><td>1,546.02 &mu;s</td><td>84.076 &mu;s</td><td>242.58 &mu;s</td><td>1,486.35 &mu;s</td><td>4480 B</td>
+</tr><tr><td>&#39;EF Core Delete&#39;</td><td>1,806.14 &mu;s</td><td>93.079 &mu;s</td><td>267.06 &mu;s</td><td>1,738.30 &mu;s</td><td>12336 B</td>
+</tr><tr><td>&#39;EF Core Update&#39;</td><td>2,230.67 &mu;s</td><td>181.948 &mu;s</td><td>527.87 &mu;s</td><td>2,106.80 &mu;s</td><td>46016 B</td>
+</tr><tr><td>&#39;EF Core Create&#39;</td><td>2,640.26 &mu;s</td><td>197.785 &mu;s</td><td>576.95 &mu;s</td><td>2,534.40 &mu;s</td><td>79152 B</td>
+</tr></tbody></table>
+</body>
+</html>
